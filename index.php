@@ -10,10 +10,10 @@
 
     <title>Document</title>
 </head>
-<body style="background-image: url('public/imagenes/piso-fondo.jpg');
-             background-repeat:no-repeat; ;
-             z-index: -3;
-             backgroun-size: 100vw 100vh" >
+<body style="background-image: url('public/imagenes/piso5.jpg');
+             background-repeat:no-repeat;
+             z-indez: -3;
+             background-size: 100vw 100vh" >
 
 <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
                 <!-- Esto es el logo -->
@@ -53,6 +53,13 @@
                 </form>
         </div>
 </nav>
+
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModal">
+  Launch demo modal
+</button>
+
+
 
 <div class="container">
         <table class="table">
@@ -149,7 +156,101 @@
         </table>
 
 </div>
+<div class="container">
+        <table class="table">
+            <tr>
+                <td width="100px">
+                    <p>
+                        <center>
+                            <h3><b>1</b></h3>
+                            <img src="public/imagenes/auto1.png" width="50px" alt="">
+                        </center>
+                    </p>
+                </td>
+                <td width="100px">
+                    <p>
+                        <center>
+                            <h3><b>2</b></h3>
+                            <img src="public/imagenes/auto1.png" width="50px" alt="">
+                        </center>
+                    </p>
+                </td>
+                <td width="100px">
+                    <p>
+                        <center>
+                            <h3><b>3</b></h3>
+                            <img src="public/imagenes/auto1.png" width="50px" alt="">
+                        </center>
+                    </p>
+                </td>
+                <td width="100px">
+                    <p>
+                        <center>
+                            <h3><b>4</b></h3>
+                            <img src="public/imagenes/auto1.png" width="50px" alt="">
+                        </center>
+                    </p>
+                </td>
+                <td width="100px">
+                    <p>
+                        <center>
+                            <h3><b>5</b></h3>
+                            <img src="public/imagenes/auto1.png" width="50px" alt="">
+                        </center>
+                    </p>
+                </td>
+                <td width="100px">
+                    <p>
+                        <center>
+                            <h3><b>5</b></h3>
+                            <img src="public/imagenes/auto1.png" width="50px" alt="">
+                        </center>
+                    </p>
+                </td>
+                <td width="100px">
+                    <p>
+                        <center>
+                            <h3><b>6</b></h3>
+                            <img src="public/imagenes/auto1.png" width="50px" alt="">
+                        </center>
+                    </p>
+                </td>
+                <td width="100px">
+                    <p>
+                        <center>
+                            <h3><b>7</b></h3>
+                            <img src="public/imagenes/auto1.png" width="50px" alt="">
+                        </center>
+                    </p>
+                </td>
+                <td width="100px">
+                    <p>
+                        <center>
+                            <h3><b>8</b></h3>
+                            <img src="public/imagenes/auto1.png" width="50px" alt="">
+                        </center>
+                    </p>
+                </td>
+                <td width="100px">
+                    <p>
+                        <center>
+                            <h3><b>9</b></h3>
+                            <img src="public/imagenes/auto1.png" width="50px" alt="">
+                        </center>
+                    </p>
+                </td>
+                <td width="100px">
+                    <p>
+                        <center>
+                            <h3><b>10</b></h3>
+                            <img src="public/imagenes/auto1.png" width="50px" alt="">
+                        </center>
+                    </p>
+                </td>
+            </tr>    
+        </table>
 
+</div>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
@@ -159,3 +260,41 @@
  
 </body>
 </html>
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Inicio de Sesion</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <!-- Inicio Formulario -->
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <lavel for="">Usuario/Email</lavel>
+                        <input type="email" class="form-control">
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <lavel for="">Contraseña</lavel>
+                        <input type="password" class="form-control">
+                    </div>
+                </div>
+            </div>
+
+        <!-- Fin Formulario-->
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
