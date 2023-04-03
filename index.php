@@ -8,7 +8,7 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="public/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
-    <title>Document</title>
+    <title>Sistema Parqueo FCYT</title>
 </head>
 <body style="background-image: url('public/imagenes/piso5.jpg');
              background-repeat:no-repeat;
@@ -49,16 +49,15 @@
             </ul>
                 <form class="form-inline my-2 my-lg-0">
                     <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+
+                    <!-- <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button> -->
                 </form>
+                <!-- Button trigger modal -->
+                <button type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModal">
+                        Ingresar
+                </button>
         </div>
 </nav>
-
-<!-- Button trigger modal -->
-<button type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModal">
-  Launch demo modal
-</button>
-
 
 
 <div class="container">
@@ -254,7 +253,9 @@
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="public/js/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <!-- Comento este script de slim porque da error al ejecutar con ajax -->
+    <!-- <script src="public/js/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script> -->
+    <script src="public/js/jquery-3.6.4.min.js"> </script>
     <script src="public/js/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="public/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
  
@@ -273,28 +274,51 @@
         </button>
       </div>
       <div class="modal-body">
+
         <!-- Inicio Formulario -->
             <div class="row">
                 <div class="col-md-12">
                     <div class="form-group">
                         <lavel for="">Usuario/Email</lavel>
-                        <input type="email" class="form-control">
+                        <input type="email" id="usuario" class="form-control">
                     </div>
                 </div>
                 <div class="col-md-12">
                     <div class="form-group">
                         <lavel for="">Contraseña</lavel>
-                        <input type="password" class="form-control">
+                        <input type="password" id="password" class="form-control">
                     </div>
                 </div>
             </div>
 
+        <!-- Inicio id respuesta, envia lo que tanga el modal, usuario y contraseña al script de abajo, al controller_login-->
+        <div id="respuesta">
+    
+        </div>
+        <!-- Fin id respuesta-->
+
         <!-- Fin Formulario-->
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+        <button type="button" class="btn btn-primary" id="btn_ingresar">Ingresar</button>
       </div>
     </div>
   </div>
 </div>
+
+<!-- Usando ayax en esta seccion, utilizando codigo jquery, esta enviando del modal al controller_login -->
+<script>
+    $('#btn_ingresar').click(function() {
+        var usuario=$('#usuario').val();
+        var password_user=$('#password').val();
+        // alert(usuario+password_user); esta linea es olo para confirmar que el formulario funciona
+
+        var url = 'login/controller_login.php'
+        $.post(url, {usuario:usuario , password_user:password_user}, function(datos){
+            $('#respuesta').html(datos);
+        });
+
+
+    });
+</script>
