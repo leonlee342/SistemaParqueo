@@ -1,4 +1,5 @@
 <?php include('app/config.php');?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -314,11 +315,22 @@
         var password_user=$('#password').val();
         // alert(usuario+password_user); esta linea es olo para confirmar que el formulario funciona
 
-        var url = 'login/controller_login.php'
-        $.post(url, {usuario:usuario , password_user:password_user}, function(datos){
-            $('#respuesta').html(datos);
+        if(usuario == ""){
+            alert("Debe introducir su usuario...");
+            $('#usuario').focus();
+        }else if(password_user == ""){
+            alert("Debe introducir su contraseña...");
+            $('#password').focus();
+            //focus() es para que directamente se valla al sector vacio para  lenar contraseña o usuario
+        }else{
+        // Esta es la parte que esta llamando al controlador de ajax
+              var url = 'login/controller_login.php'
+              $.post(url, {usuario:usuario , password_user:password_user}, function(datos){
+              $('#respuesta').html(datos);
         });
-
+        // Esta es la parte que esta llamando al controlador de ajax
+        }
+     
 
     });
 </script>
