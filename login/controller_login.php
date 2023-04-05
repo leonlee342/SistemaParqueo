@@ -20,12 +20,15 @@
         <div class="alert alert-success" role="alert">
                 Usuario Correcto
         </div>
+        <script>location.href= "principal.php";</script>
         <?php
     }else{
         ?>
         <div class="alert alert-danger" role="alert">
                 Error al introducir sus datos
         </div>
+         <!-- jquery password que la propiedad sea nulo si se equivoca en su contraseña -->
+        <script>$('#password').val("");$('#password').focus();</script>
     <?php
     }
 
