@@ -311,6 +311,16 @@
 <!-- Usando ayax en esta seccion, utilizando codigo jquery, esta enviando del modal al controller_login -->
 <script>
     $('#btn_ingresar').click(function() {
+        login();
+    });
+        // Esta funcion keypress es para que ingrese toncano la tecla enter(15)
+    $('#password').keypress(function(e){
+        if(e.which == 13){
+            login();
+        }
+    });
+
+    function login(){
         var usuario=$('#usuario').val();
         var password_user=$('#password').val();
         // alert(usuario+password_user); esta linea es olo para confirmar que el formulario funciona
@@ -330,7 +340,6 @@
         });
         // Esta es la parte que esta llamando al controlador de ajax
         }
-     
+    }
 
-    });
 </script>

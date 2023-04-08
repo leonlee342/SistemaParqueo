@@ -1,6 +1,9 @@
 <?php
     include('../app/config.php');
 
+     //con esto estoy diciendo que voy a iniciar secion en el contorlador;
+    session_start();
+
     $usuario_user = $_POST['usuario'];
     $password_user = $_POST['password_user'];
 
@@ -22,6 +25,9 @@
         </div>
         <script>location.href= "principal.php";</script>
         <?php
+        
+        //en eta variable se esta almacennado el usuario que va a ingresar al sistema
+        $_SESSION['usuario_sesion'] = $email_table;
     }else{
         ?>
         <div class="alert alert-danger" role="alert">
